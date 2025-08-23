@@ -1,0 +1,18 @@
+/* styling for whole page */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global style for all section titles */
+.section-title {
+  display: inline-block;          /* underline matches text width */
+  border-bottom: 2px solid #333; /* underline color and thickness */
+  padding-bottom: 4px;           /* space between text and underline */
+  margin-bottom: 20px;           /* spacing from content below */
+  font-size: 2rem;               /* adjust as needed */
+  color: #333;                   /* text color */
+}
+

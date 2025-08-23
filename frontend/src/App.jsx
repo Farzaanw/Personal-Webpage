@@ -7,10 +7,11 @@ import Homepage from './pages/Homepage'
 import About from './pages/About'
 import Education from './pages/Education'
 import Experiences from './pages/Experiences'
-import Skills from './pages/Skills'
+import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 // import ChatIcon from './components/ChatIcon'
 // import Chatbot from './components/Chatbot'
+import Hobbies from './pages/Hobbies'
 import Footer from './components/Footer'
 
 
@@ -22,7 +23,8 @@ function App() {
             <About />
             <Education />
             <Experiences />
-            <Skills />
+            <Projects />
+            <Hobbies />
             <Contact />
             {/* <ChatIcon /> */}
             <Footer />

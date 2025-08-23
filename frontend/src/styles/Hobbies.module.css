@@ -1,0 +1,11 @@
+.body {
+    font-family: "Inter";
+    background-color:#f5f7f7e0;
+    padding: 60px 20px 20px; /* top padding = navbar height */
+    text-align: center;
+    min-height: 100vh;
+    scroll-margin-top: 90px;
+
+     /* add fade between sections */
+    background: linear-gradient(to bottom, #f5f7f7e0, #e6d1bc);
+}
