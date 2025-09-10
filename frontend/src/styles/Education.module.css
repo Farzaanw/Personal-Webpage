@@ -1,12 +1,150 @@
 .body {
     font-family: "Inter";
     background-color:#e6d1bc;
-    padding: 60px 20px 20px; /* top padding = navbar height */
-    text-align: center;
-    min-height: 100vh;
+    padding: 0px 20px 20px; /* top padding = navbar height */
+    min-height: 85vh;
     scroll-margin-top: 90px;
 
     /* add fade between sections */
     background: linear-gradient(to bottom, #e6d1bc, #f5f7f7e0);
+    
+    text-align: center; /* center only affects title here */
+}
 
+/* Title stays centered above everything */
+.sectionTitle {
+  display: inline-block;
+  border-bottom: 2.5px solid #333;
+  padding-bottom: 4px;
+  margin-bottom: 40px;
+  margin-top: 10px;  
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.container {
+  background: linear-gradient(
+    to bottom,
+    rgb(215, 204, 204) 0%,    /* top section: slightly darker */
+   rgb(215, 204, 204) 5%,   /* maintain top color for header height */
+    rgba(248, 245, 245, 0.95) 100% /* bottom section: coursework */
+  );
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px -6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.educationHeader {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  margin-left: -20px; /* ✅ one indent for both */
+
+}
+
+.gradIcon {
+  position: absolute;
+  left: 20px; /* aligns with left edge of container */  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.05); /* subtle circular background */
+}
+
+.schoolBlock {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column; /* keeps school and degree stacked */
+}
+
+.school {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.degree {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin: 0px;
+  margin-left: 55px;
+}
+
+.date {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin: 0;
+}
+
+/* Coursework Section */
+.coursework h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #1a202c;
+}
+
+.courseList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 6px 0px; /* row gap, column gap */
+  padding-left: 20px;
+  margin: 0;
+  list-style: disc;
+  color: #2d3748;
+  font-size: 0.95rem;
+}
+
+.courseList li { 
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .educationHeader {
+    align-items: flex-start;
+  }
+
+  .gradIcon {
+    margin-bottom: 5px;
+  }
+
+  .schoolBlock p {
+    font-size: 0.7rem;
+  }
+
+  .school{
+    margin-right: 17px;
+  }
+
+  .date {
+    font-size: 0.7rem;
+  }
+
+  .courseList {
+    grid-template-columns: 1fr; /* stack vertically */
+    gap: 6px 0; /* remove horizontal gap */
+  }
 }

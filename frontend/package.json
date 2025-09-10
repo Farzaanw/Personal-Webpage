@@ -13,8 +13,11 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-typed": "^2.0.12"
+    "react-slick": "^0.31.0",
+    "react-typed": "^2.0.12",
+    "slick-carousel": "^1.8.1"
   }
 }

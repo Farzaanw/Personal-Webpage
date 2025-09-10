@@ -3,9 +3,9 @@
     background-color:#e6d1bc;
     padding: 60px 20px 20px; /* top padding = navbar height */
     text-align: center;
-    min-height: 100vh;
+    min-height: 80vh;
     scroll-margin-top: 90px;
-    margin-top: 15px; /* adjust to taste */
+    /* margin-top: 15px;*/   /* space between navbar and content */
 
     /* add fade between sections */
     background: linear-gradient(to bottom, #e6d1bc, #f5f7f7e0);

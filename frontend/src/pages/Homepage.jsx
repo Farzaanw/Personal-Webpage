@@ -38,8 +38,8 @@ function Homepage() {
                     typeSpeed={60}
                     backSpeed={30}
                     loop
-                    style={{ color: "#333", fontSize: "25px", fontWeight: "500" }}
-                />
+                    style={{ color: "#5b3510", fontSize: "25px", fontWeight: "500" }}
+                />  
 
                 <div
                     className={styles.arrow}

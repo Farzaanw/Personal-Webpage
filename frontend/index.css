@@ -6,13 +6,25 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Global style for all section titles */
-.section-title {
-  display: inline-block;          /* underline matches text width */
-  border-bottom: 2px solid #333; /* underline color and thickness */
-  padding-bottom: 4px;           /* space between text and underline */
-  margin-bottom: 20px;           /* spacing from content below */
-  font-size: 2rem;               /* adjust as needed */
-  color: #333;                   /* text color */
+::selection {
+  background: #b5895e;  /* custom highlight color */
+  color: #fff;          /* text color while highlighted */
 }
 
+section {
+  max-width: auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Global style for all section titles */
+.sectionTitle {
+  display: inline-block;
+  border-bottom: 2.5px solid #333;
+  padding-bottom: 4px;
+  margin: 0 0 40px 0; /* only bottom margin */
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}

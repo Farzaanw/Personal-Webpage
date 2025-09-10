@@ -1,12 +1,197 @@
 .body {
     font-family: "Inter";
     background-color:#f5f7f7e0;
-    padding: 60px 20px 20px; /* top padding = navbar height */
+    padding: 0px 20px 20px; /* top padding = navbar height */
     text-align: center;
     min-height: 100vh;
     scroll-margin-top: 90px;
+    padding-bottom: 90px;
 
     /* add fade between sections */
     background: linear-gradient(to bottom, #f5f7f7e0, #e6d1bc);
 
+}
+
+/* Title stays centered above everything */
+.sectionTitle {
+  display: inline-block;
+  border-bottom: 2.5px solid #333;
+  margin-bottom: 10px;
+  margin-top: 10px;  
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Vertical line connecting icons */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 25px; /* center of your 50px-wide icon */
+  top: 80px;  /* start slightly below the icon (adjust if needed) */
+  width: 2px;
+  height: calc(100% - 70px); /* stretch down to next icon */
+  background-color: #c9c9c9;
+  z-index: 0;
+}
+
+/* Remove line for last item */
+.timeline-item:last-child::before {
+  display: none;
+}
+
+/* Container for icon + card */
+.timeline-item {
+  padding: 10px 10px;
+  position: relative;
+  width: 100%;
+}
+
+.item-icon {
+  position: absolute;
+    top: 30px;
+  left: 0;
+  transform: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 70%;
+  display: flex;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #666363; /* dark gray, or any color you want */
+
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-card {
+  padding: 30px;
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 245, 245, 0.95) 100%
+    rgb(215, 204, 204) 5%,
+    rgb(215, 204, 204) 0%,
+  );
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #c4d7e0;
+  margin-left: 60px;
+  position: relative;
+}
+
+.timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px -6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card-date {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #4a5568;
+  margin: 10px 0 0 0;
+}
+
+.card-content h3 {
+  text-align: left;
+  font-size: 1.5rem;
+  color: #1a202c;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.card-content h4 {
+  margin-top: -20;
+  text-align: left;
+  font-size: 1rem;
+  color: #4a5568;
+  margin: 5px 0px 0px 0px;
+}
+
+.card-content ul{
+    text-align: left;
+    margin-top: 20px;
+    padding-left: 20px;
+    color: #333;
+    margin-bottom: 0px;
+    font-size: 0.9rem;
+}
+
+.card-content ul li{
+    text-align: left;
+    margin-top: 10px;
+    padding-left: 20px;
+    color: #333;
+}
+
+@media screen and (max-width: 600px) {
+
+  /* Timeline container padding */
+  .timeline {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Timeline items take full width */
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;  /* space for icon */
+    padding-right: 10px;
+    margin-bottom: 40px; /* space between cards */
+  }
+
+  /* Icons */
+  .item-icon {
+    left: 10px;          /* move icon closer to left edge */
+    top: 0;
+    transform: none;
+  }
+
+  /* Timeline item connecting line adjustment */
+  .timeline-item::before {
+    left: 35px;          /* adjust line to center of icon */
+    top: 50px;           /* adjust for icon size */
+    height: calc(100% - 50px);
+  }
+
+  /* Timeline cards */
+  .timeline-card {
+    margin-left: 70px;   /* align cards with icons */
+    padding: 20px;       /* reduce padding for smaller screens */
+  }
+
+  /* Card header and date adjustments */
+  .card-content h3 {
+    font-size: 1.3rem;
+  }
+  .card-date {
+    font-size: 0.9rem;
+    right: 15px;
+    top: 15px;
+  }
+
+  /* Subheader */
+  .card-content h4 {
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+
+  /* List items */
+  .card-content ul {
+    margin-top: 15px;
+    padding-left: 15px;
+  }
 }

@@ -1,40 +1,45 @@
 .bar {
-  display: flex;
   position: sticky;
-  z-index: 1000;
   top: 0;
-
+  z-index: 1000;
   font-family: "Inter";
-  background-color:#dcc3aa;
-  justify-content: center; /* center navLinks */
-  flex-wrap: wrap; /* allow items to wrap instead of overlap */
-  align-items: center;
-  height: 60px;
-
+  background-color: #dcc3aa;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* Absolutely position the logo to the left */
+/* Container holding logo + nav links */
+.navRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* centers navLinks */
+  position: relative;       /* allows absolute logo positioning */
+  flex-wrap: wrap;          /* wrap on small screens */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+/* Logo stays left but nav links stay centered */
 .logo {
   position: absolute;
   left: 20px;
-  color: #333;
 }
 
 .logo a {
   text-decoration: none;
-  color:#5b3510;
+  color: #5b3510;
   font-weight: 900;
   font-size: 24px;
   transition: color 0.2s ease;
 }
 
 .logo a:hover {
-  color:#8c7156;
+  color: #8c7156;
 }
 
-/* Centered nav links */
+/* Nav links centered */
 .navLinks {
   display: flex;
   gap: 35px;
@@ -48,9 +53,53 @@
   color: #333;
   font-weight: 600;
   font-size: 18px;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, font-size 0.2s ease;
 }
 
 .navLinks li a:hover {
-    color:#8c7156;
+  color: #8c7156;
+}
+
+/* Responsive adjustments */
+
+/* Medium screens */
+@media (max-width: 1024px) {
+  .navLinks {
+    gap: 25px;
+  }
+  .navLinks li a {
+    font-size: 16px;
+  }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .navRow {
+    flex-direction: column;   /* stack logo + nav links */
+    align-items: center;      /* center everything */
+  }
+
+  .logo {
+    position: static;         /* logo flows naturally on top */
+    margin-bottom: 10px;
+  }
+
+  .navLinks {
+    gap: 15px;
+  }
+
+  .navLinks li a {
+    font-size: 14px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .navLinks {
+    gap: 10px;
+  }
+
+  .navLinks li a {
+    font-size: 12px;
+  }
 }

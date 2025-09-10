@@ -1,34 +1,85 @@
 .body {
-    font-family: "Inter";
-    background-color:#f5f7f7e0;
-    padding: 60px 20px 20px; /* top padding = navbar height */
-    text-align: center;
-    min-height: 100vh;
-    scroll-margin-top: 10px;
+  font-family: "Inter";
+  background-color: #f5f7f7e0;
+  padding: 60px 20px 20px;
+  min-height: 100vh;
+  scroll-margin-top: 10px;
+  background: linear-gradient(to bottom, #f5f7f7e0, #e6d1bc);
 
-    /* add fade between sections */
-    background: linear-gradient(to bottom, #f5f7f7e0, #e6d1bc);
+  text-align: center; /* center only affects title here */
 }
 
-/* Global style for all section titles */
+/* Title stays centered above everything */
 .sectionTitle {
   display: inline-block;
   border-bottom: 2.5px solid #333;
   padding-bottom: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-size: 2rem;
   font-weight: bold;
   color: #333;
 }
 
-.photoWrapper{
-
+/* New row for photo + text */
+.contentRow {
+  align-items: center;   /* vertical centering */
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;  /* stacks nicely on smaller screens */
+  text-align: left; /* makes about text aligned left */
 }
 
-.photo{
-
+.photoWrapper {
+    align-self: flex-start;  /* move photo to top of the flex row */
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.aboutText{
-    
+.photo {
+    margin-left: 70px;
+  width: 350px;
+  height: auto;
+  border-radius: 15px;
+  border: 7px solid #e6d1bc;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.aboutText {
+  flex: 2;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #444;
+  margin-top: -15px; /* moves the text down */
+  margin-right: 50px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .sectionTitle {
+    text-align: center;      /* center text under photo */
+    align-items: center;
+  }
+  .contentRow {
+    flex-direction: column;  /* stack photo above text */
+    text-align: center;      /* center text under photo */
+    align-items: center;
+  }
+
+  .photoWrapper {
+    flex: 0 0 80%;           /* scale photo to 80% of section width */
+    margin-bottom: 5px;     /* spacing between photo and text */
+  }
+
+  .aboutText {
+    width: 90%;              /* text fits nicely under photo */
+    max-width: 100%;
+  }
 }

@@ -1,11 +1,204 @@
 .body {
     font-family: "Inter";
-    background-color:#e6d1bc;
-    padding: 60px 20px 20px; /* top padding = navbar height */
+    padding: 0px 20px 0px; /* top padding = navbar height */
     text-align: center;
     min-height: 100vh;
     scroll-margin-top: 90px;
 
     /* add fade between sections */
     background: linear-gradient(to bottom, #e6d1bc, #f5f7f7e0);
+}
+
+/* Title stays centered above everything */
+.sectionTitle {
+  display: inline-block;
+  border-bottom: 2.5px solid #333;
+  margin-bottom: 40px;
+  margin-top: 0px;  
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+
+/* MAIN CONTAINER */
+/* Parent wrapper for Swiper */
+.projects-wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;              /* DO NOT reserve arrow space here */
+  box-sizing: border-box;
+  overflow-x: hidden; /* hide left/right slide overflow */
+  overflow-y: visible; /* allow vertical shadows */
+}
+
+/* Swiper itself can stay visible vertically */
+.carousel {
+  --swiper-navigation-color: #c7965b; /* Change to your desired color */
+  --swiper-pagination-color: #171819; /* Your desired color */
+
+  max-width: 1200px;
+  overflow: visible; /* shadows on top/bottom show */
+  position: relative;
+  padding-bottom: 46px;
+}
+
+/* Center each slide so only one card shows fully */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* Arrows styling */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #333;
+  top: 50%;
+  left: auto;   /* remove any extra positioning if not needed */
+  right: auto;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 10;
+
+  /* smooth animations */
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, color 0.25s ease;
+  transform: translateY(-50%) scale(1);
+}
+
+/* Card styling for each project*/
+.projectCard {
+  align-items: center;            /* vertically align content & image */
+  justify-content: space-between; /* spread text and image */
+  gap: 30px;                      /* spacing between text and image */
+
+  padding: 30px;
+  min-height: 400px; /* adjust as needed */
+  background: linear-gradient(
+    to bottom,
+    rgba(215, 204, 204, 1) 0%,       /* solid top strip */
+    rgba(248, 245, 245, 0.98) 60%,   /* smooth transition */
+    rgba(248, 245, 245, 0.6) 100%    /* blend into page background */
+  );
+  border-radius: 16px;
+  max-width: 900px;
+  margin: 0 auto;
+
+  /* Stronger top shadow only */
+  box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.25);
+
+  /* Softer border to avoid harsh edges */
+  border: 1px solid rgba(196, 215, 224, 0.4);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.projectCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 -10px 50px rgba(0, 0, 0, 0.28);
+}
+
+/* Card Content */
+.projectImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+  max-height: 300px;
+
+  /* feathered edges on all 4 sides */
+  -webkit-mask-image: 
+    linear-gradient(to right, transparent 0%, black 3%, black 95%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 3%, black 95%, transparent 100%);
+  -webkit-mask-composite: intersect;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: cover;
+
+  mask-image: 
+    linear-gradient(to right, transparent 0%, black 3%, black 90%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, black 3%, black 95%, transparent 100%);
+  mask-composite: intersect;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: cover;
+}
+
+.techList {
+  margin: 10px 0;
+}
+
+.techTag {
+  display: inline-block;
+  background: #eee;
+  padding: 5px 10px;
+  margin: 4px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.projectLink {
+  display: inline-block;
+  margin-top: 10px;
+  color: #2d3135;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-decoration: none;
+  margin-bottom: 0;
+}
+
+.projectLink:hover {
+  color: #7c6565;
+}
+
+
+
+/* 📱 Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .projectCard {
+    padding: 15px;
+  }
+
+  .projectImage {
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  .techTag {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+
+  .projectLink {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .projectCard {
+    padding: 10px;
+  }
+
+  .projectImage {
+    max-height: 150px;
+  }
+
+  .techList {
+    gap: 5px;
+  }
+
+  .techTag {
+    font-size: 0.75rem;
+  }
+
+  .projectLink {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
 }
