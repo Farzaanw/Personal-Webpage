@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
 import styles from '../styles/Hobbies.module.css';
 
-import beaches from '../assets/beaches.png';
-import concert from '../assets/concert.png';
-import concert2 from '../assets/concert2.png';
-import cooking from '../assets/cooking.png';
-import fam_soccer from '../assets/family_soccer.png';
-import football_game from '../assets/football_game.png';
-import friends from '../assets/friends.png';
-import golf_me from '../assets/golf_me.png';
-import hiking from '../assets/hiking.png';
-import hiking_zoro from '../assets/hiking_with_zoro.png';
-import hiking2 from '../assets/hiking2.png';
-import sightseeing from '../assets/sightseeing.png';
-import views from '../assets/views.png';
-import sister from '../assets/sister.png';
-import skiing from '../assets/skiing.png';
-import skiing2 from '../assets/skiing2.png';
-import soccer from '../assets/soccer.png';
-import surfing from '../assets/surfing.png';
-import traveling from '../assets/traveling.png';
-import theater from '../assets/theater.png';
+import beaches from '../assets/beaches.PNG';
+import concert from '../assets/concert.PNG';
+import concert2 from '../assets/concert2.PNG';
+import cooking from '../assets/cooking.PNG';
+import fam_soccer from '../assets/family_soccer.PNG';
+import football_game from '../assets/football_game.PNG';
+import friends from '../assets/friends.PNG';
+import golf_me from '../assets/golf_me.PNG';
+import hiking from '../assets/hiking.PNG';
+import hiking_zoro from '../assets/hiking_with_zoro.PNG';
+import hiking2 from '../assets/hiking2.PNG';
+import sightseeing from '../assets/sightseeing.PNG';
+import views from '../assets/views.PNG';
+import sister from '../assets/sister.PNG';
+import skiing from '../assets/skiing.PNG';
+import skiing2 from '../assets/skiing2.PNG';
+import soccer from '../assets/soccer.PNG';
+import surfing from '../assets/surfing.PNG';
+import traveling from '../assets/traveling.PNG';
+import theater from '../assets/theater.PNG';
 
 
 const hobbiesData = [
