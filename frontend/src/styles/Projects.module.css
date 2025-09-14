@@ -158,15 +158,21 @@
 
 
 
-/* 📱 Responsive adjustments */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
+  .projects-wrapper {
+    max-width: 700px;   /* narrower container */
+    padding: 0 10px;
+  }
+
   .projectCard {
-    padding: 15px;
+    max-width: 650px;
+    padding: 20px;
+    gap: 20px;
+    min-height: 320px;  /* reduce vertical space */
   }
 
   .projectImage {
-    max-height: 200px;
-    object-fit: cover;
+    max-height: 220px;
   }
 
   .techTag {
@@ -175,30 +181,48 @@
   }
 
   .projectLink {
-    padding: 6px 12px;
     font-size: 0.9rem;
   }
 }
 
-@media screen and (max-width: 480px) {
+/* Second shrink — mobile phones */
+@media screen and (max-width: 600px) {
+  .projects-wrapper {
+    max-width: 95%;  /* take nearly full width */
+  }
+
+  .sectionTitle {
+    text-align: center;
+    margin-right: 30px;
+  }
+
   .projectCard {
-    padding: 10px;
+    flex-direction: column; /* stack text & image vertically */
+    align-items: center;
+    max-width: 100%;
+    padding: 15px;
+    gap: 15px;
+    min-height: auto;
+    margin-right: 40px;
   }
 
   .projectImage {
-    max-height: 150px;
-  }
-
-  .techList {
-    gap: 5px;
+    max-height: 160px;
   }
 
   .techTag {
     font-size: 0.75rem;
+    padding: 3px 7px;
   }
 
   .projectLink {
-    padding: 5px 10px;
     font-size: 0.8rem;
+    margin-top: 8px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 40px;
+    height: 20px;
   }
 }

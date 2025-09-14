@@ -63,23 +63,39 @@
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
+  /* Keep title centered */
   .sectionTitle {
-    text-align: center;      /* center text under photo */
-    align-items: center;
+    text-align: center;
+    margin-right: 30px;
   }
+
+  /* Stack photo above text, center everything */
   .contentRow {
-    flex-direction: column;  /* stack photo above text */
-    text-align: center;      /* center text under photo */
-    align-items: center;
+    flex-direction: column;   /* stack photo above text */
+    text-align: center;       /* center text */
+    align-items: center;      /* center photo + text */
+    gap: 20px;                /* reduce gap for smaller screens */
   }
 
+  /* Photo scaling + centering */
   .photoWrapper {
-    flex: 0 0 80%;           /* scale photo to 80% of section width */
-    margin-bottom: 5px;     /* spacing between photo and text */
+    flex: 0 0 80%;            /* scale photo width */
+    justify-content: center;   /* center photo */
+    margin: 0 auto 10px auto; /* spacing below photo */
   }
 
+  .photo {
+    margin-left: 0;           /* remove left margin from desktop layout */
+    max-width: 90%;           /* scale down photo for phone screens */
+    margin-right: 40px;
+  }
+
+  /* Text scaling + centering */
   .aboutText {
-    width: 90%;              /* text fits nicely under photo */
+    width: 90%;               /* full width under photo */
     max-width: 100%;
+    margin: 0 auto;           /* center text block */
+    text-align: center;       /* center text content */
+    margin-right: 40px;
   }
 }

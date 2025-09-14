@@ -23,13 +23,17 @@ function Education() {
           <h4>Relevant Coursework:</h4>
           <ul className={styles.courseList}>
             <li>Data Structures and Algorithms</li>
-            <li>Software Engineering</li>
-            <li>Programming in Unix</li>
-            <li>Artificial Intelligence</li>
+            <li>Intro to Databases</li>
+            <li>Analysis of Algorithms</li>
+            <li>Honors Vector Calculus</li>
+            <li>Linear Algebra</li>
+            <li>Software Engineering (1/2)</li>
+            <li>Operating Systems (1/2)</li>
+            <li>Machine Learning & Data Mining</li>
             <li>Computer Architecture</li>
             <li>Discrete Mathematics</li>
-            <li>Machine Learning</li>
-            <li>Databases</li>
+            <li>Statistical Inferencing & Analysis</li>
+            <li>Intro to Computer Networks</li>
           </ul>
         </div>  
             

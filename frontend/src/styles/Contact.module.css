@@ -8,7 +8,6 @@
 
     /* add fade between sections */
     background: linear-gradient(to bottom, #e6d1bc, #f5f7f7e0);
-
 }
 
 .sectionTitle {
@@ -27,7 +26,6 @@
     padding-bottom: 20px;
 }
 
-
 .cardsContainer {
   display: flex;
   justify-content: center;
@@ -39,10 +37,8 @@
 
 .card {
   text-decoration: none; 
-
-  color: inherit;        /* keeps text same as rest of the card */
+  color: inherit;
   background: radial-gradient(circle, #ffffff 70%, #d2b48c 100%);
-  /* white in the center fading to a warm brown-beige */
   padding: 20px;
   width: 200px;
   border-radius: 12px;
@@ -56,8 +52,8 @@
 }
 
 .card h3 {
-  text-decoration: none; /* removes underline */
-  color: inherit;        /* keeps text same as rest of the card */
+  text-decoration: none;
+  color: inherit;
   margin-top: 40px;
   font-size: 18px;
   color: #333;
@@ -67,4 +63,71 @@
   text-decoration: underline;
   font-size: 14px;
   color: #555;
+}
+
+/* 📱 Responsive Adjustments */
+
+/* First shrink — around 50% width (tablets/small desktops) */
+@media screen and (max-width: 900px) {
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+
+  .body p {
+    font-size: 18px;
+  }
+
+  .cardsContainer {
+    height: 160px;
+    gap: 15px;
+  }
+
+  .card {
+    width: 160px;
+    padding: 16px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+    margin-top: 25px;
+  }
+
+  .card p {
+    font-size: 12px;
+  }
+}
+
+/* Second shrink — around 40% width (phones) */
+@media screen and (max-width: 768px) {
+  .sectionTitle {
+    margin-right: 30px;
+  }
+
+  .body p {
+    font-size: 16px;
+    margin-right: 30px;
+  }
+
+  .cardsContainer {
+    height: 140px;
+    gap: 12px;
+    margin-right: 30px;
+  }
+
+  .card {
+    justify-content: center; 
+    align-items: center;     
+    width: 130px;
+    padding: 12px;
+  }
+
+  .card h3 {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .card p {
+    font-size: 9px;
+    margin-left: 30px;
+  }
 }

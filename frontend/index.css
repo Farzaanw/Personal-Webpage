@@ -6,11 +6,6 @@ html, body {
   box-sizing: border-box;
 }
 
-::selection {
-  background: #b5895e;  /* custom highlight color */
-  color: #fff;          /* text color while highlighted */
-}
-
 section {
   max-width: auto;
   width: 100%;

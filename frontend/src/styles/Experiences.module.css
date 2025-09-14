@@ -137,61 +137,62 @@
     color: #333;
 }
 
-@media screen and (max-width: 600px) {
-
-  /* Timeline container padding */
+/* When screen is ~40% width (~700px wide) */
+@media screen and (max-width: 700px) {
+  .sectionTitle{
+    margin-right: 30px;
+  }
+  
+  /* Timeline container tightens more */
   .timeline {
-    padding-left: 20px;
-    padding-right: 20px;
+    max-width: 100%;
+    padding: 0px;
+    margin-left: 0;
   }
 
-  /* Timeline items take full width */
-  .timeline-item {
-    width: 100%;
-    padding-left: 70px;  /* space for icon */
-    padding-right: 10px;
-    margin-bottom: 40px; /* space between cards */
-  }
-
-  /* Icons */
-  .item-icon {
-    left: 10px;          /* move icon closer to left edge */
-    top: 0;
-    transform: none;
-  }
-
-  /* Timeline item connecting line adjustment */
-  .timeline-item::before {
-    left: 35px;          /* adjust line to center of icon */
-    top: 50px;           /* adjust for icon size */
-    height: calc(100% - 50px);
-  }
-
-  /* Timeline cards */
+  /* Timeline card shrinks further */
   .timeline-card {
-    margin-left: 70px;   /* align cards with icons */
-    padding: 20px;       /* reduce padding for smaller screens */
+    margin-left: 45px;
+    padding: 15px;
+    font-size: 0.9rem;
+    max-width: 280px;
   }
 
-  /* Card header and date adjustments */
+  /* Card titles smaller */
   .card-content h3 {
-    font-size: 1.3rem;
-  }
-  .card-date {
-    font-size: 0.9rem;
-    right: 15px;
-    top: 15px;
+    font-size: 1.2rem;
   }
 
-  /* Subheader */
   .card-content h4 {
-    font-size: 0.9rem;
-    margin-top: 5px;
+    font-size: 0.85rem;
   }
 
-  /* List items */
   .card-content ul {
-    margin-top: 15px;
-    padding-left: 15px;
+    font-size: 0.8rem;
+    padding-left: 12px;
+  }
+
+  /* Move date below title instead of top-right */
+  .card-date {
+    position: static;      /* remove absolute positioning */
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #555;
+  }
+
+  /* Icons shrink more */
+  .item-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  /* Connecting line adjusts */
+  .timeline-item::before {
+    left: 20px;
+    top: 45px;
+    height: calc(100% - 45px);
   }
 }

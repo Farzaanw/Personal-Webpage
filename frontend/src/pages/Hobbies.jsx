@@ -27,7 +27,6 @@ const hobbiesData = [
   { title: "Golfing", image: golf_me },
   { title: "Hiking", image: hiking },
   { title: "Traveling", image: traveling },
-  { title: "Cooking", image: cooking },
   { title: "Soccer", image: soccer },
   { title: "Concerts", image: concert },
   { title: "Theater", image: theater },
@@ -39,7 +38,6 @@ const hobbiesData = [
   { title: "Skiing 2", image: skiing2 },
   { title: "Hiking 2", image: hiking2 },
   { title: "Concert 2", image: concert2 },
-  { title: "Sister", image: sister },
   { title: "Football Game", image: football_game },
   { title: "Hiking with Zoro", image: hiking_zoro }
 ];

@@ -17,3 +17,14 @@
   margin-top: 200px; /* spacing from title */
   color: black; /* arrow color */
 }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .body {
+    margin-right: 90px;
+  }
+
+  .arrow{    
+    margin-right: 40px;
+  }
+}

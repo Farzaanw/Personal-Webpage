@@ -147,3 +147,89 @@
   transform: scale(1.1);
   box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
+
+/* First shrink — when screen is ~50% width (tablets / small desktops) */
+@media screen and (max-width: 900px) {
+  .carouselContainer {
+    height: 280px;
+  }
+
+  .carouselCard {
+    width: 280px;
+    height: 280px;
+  }
+
+  .leftCard {
+    --x-offset: 120px; /* bring closer together */
+  }
+
+  .rightCard {
+    --x-offset: -120px;
+  }
+
+  .carouselButtonsLeft,
+  .carouselButtonsRight {
+    /* move buttons closer to cards */
+    left: calc(35% - 140px - 40px);
+    right: calc(35% - 140px - 40px);
+  }
+
+  .carouselButtonsLeft button,
+  .carouselButtonsRight button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .cardBack p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Second shrink — phones (very narrow screens) */
+@media screen and (max-width: 600px) {
+  .sectionTitle {
+    margin-right: 30px;
+  }
+
+  .carouselContainer {
+    height: 220px;
+    margin-right: 50px;
+  }
+
+  .carouselCard {
+    width: 220px;
+    height: 220px;
+  }
+
+  .leftCard {
+    --x-offset: 90px;
+  }
+
+  .rightCard {
+    --x-offset: -90px;
+  }
+
+  .carouselButtonsLeft,
+  .carouselButtonsRight {
+    left: calc(35% - 110px - 30px);
+    right: calc(35% - 110px - 30px);
+    top: auto;               
+    bottom: -100px;  
+  }
+
+  .carouselButtonsLeft button,
+  .carouselButtonsRight button {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .cardBack h3 {
+    font-size: 1rem;
+  }
+
+  .cardBack p {
+    font-size: 0.75rem;
+  }
+}
