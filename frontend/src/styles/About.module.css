@@ -25,7 +25,7 @@
   align-items: center;   /* vertical centering */
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 50px;
   flex-wrap: wrap;  /* stacks nicely on smaller screens */
   text-align: left; /* makes about text aligned left */
 }
