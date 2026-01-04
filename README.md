@@ -29,12 +29,6 @@ I built this site to:
 
 ---
 
-## Deployment
-The website is deployed at:
-- **Custom domain:** https://www.farzaanw.site  
-
----
-
 ## Contact
 Feel free to reach out or connect:
 - **GitHub:** https://github.com/farzaan
