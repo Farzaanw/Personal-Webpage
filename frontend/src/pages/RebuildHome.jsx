@@ -39,6 +39,8 @@ function MetricsRow({ metrics }) {
 
 function RebuildHome() {
   const journeyRecentFirst = [...siteContent.journeyTimeline].filter((j) => j.title !== 'Teachly + MaptivityAI').reverse();
+  const [journeyOpen, setJourneyOpen] = useState(false);
+  const mostRecent = journeyRecentFirst[0];
   return (
     <div className="rb-wrap">
       <nav className="rb-nav">
@@ -90,7 +92,18 @@ function RebuildHome() {
         <section id="journey" className="rb-section">
           <h2 className="rb-h2">Professional Journey</h2>
           <p className="rb-lede">Most recent first — read down through the story. Side projects live in Featured Work.</p>
-          <div className="rb-timeline">
+          {!journeyOpen ? (
+            <div className="rb-journey-stack" onClick={() => setJourneyOpen(true)} role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setJourneyOpen(true); } }}>
+              <div className="rb-timeline-date">{mostRecent.date}</div>
+              <h3>{mostRecent.title}</h3>
+              <div className="rb-timeline-org">{mostRecent.org}</div>
+              <p>{mostRecent.summary}</p>
+              <span className="rb-journey-toggle">Show full journey - 12 experiences ↓</span>
+            </div>
+          ) : (
+            <>
+              <button className="rb-journey-toggle-btn" onClick={() => setJourneyOpen(false)}>Minimize journey ↑</button>
+<div className="rb-timeline">
             {journeyRecentFirst.map((j, i) => (
               <React.Fragment key={j.title}>
                 <article className="rb-timeline-card">
@@ -105,6 +118,9 @@ function RebuildHome() {
               </React.Fragment>
             ))}
           </div>
+              <button className="rb-journey-toggle-btn" onClick={() => setJourneyOpen(false)}>Minimize ↑</button>
+            </>
+          )}
         </section>
 
         <section id="skills" className="rb-section">

@@ -74,3 +74,15 @@ body { background: #0B0F0B; color: #F2F5F2; }
 .rb-bullets { margin: 10px 0 0; padding-left: 18px; font-size: 13px; color: #C8D2C8; }
 .rb-bullets li { margin-bottom: 4px; }
 .rb-timeline-card .rb-tags { margin-top: 12px; }
+
+.rb-hero { padding-bottom: 28px; }
+#work { padding-top: 28px; }
+.rb-edu { background: linear-gradient(120deg, #1E3A8A, #2563EB, #1D4ED8); background-size: 200% 200%; animation: rb-edu-shift 12s ease infinite; border-color: #3B82F6; }
+.rb-edu span { color: #DBEAFE; }
+.rb-edu .rb-tag { color: #E0E7FF; border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.08); }
+@keyframes rb-edu-shift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+.rb-journey-stack { cursor: pointer; background: #151A15; border: 1px solid #242A24; border-left: 3px solid #2563EB; border-radius: 12px; padding: 16px; }
+.rb-journey-stack h3 { margin: 6px 0 4px; font-size: 16px; }
+.rb-journey-stack p { font-size: 13px; color: #A8B3A8; }
+.rb-journey-toggle { display: block; margin-top: 10px; color: #2563EB; font-weight: 700; font-size: 13px; }
+.rb-journey-toggle-btn { background: #151A15; border: 1px solid #333; color: #F2F5F2; border-radius: 999px; padding: 8px 14px; cursor: pointer; margin-bottom: 12px; font-size: 13px; }
