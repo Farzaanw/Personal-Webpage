@@ -96,7 +96,6 @@ function RebuildHome() {
                 {i < journeyRecentFirst.length - 1 && <div className="rb-journey-arrow" aria-hidden="true">↑</div>}
               </React.Fragment>
             ))}
-            <div className="rb-journey-arrow" aria-hidden="true">↑</div>
           </div>
         </section>
 
