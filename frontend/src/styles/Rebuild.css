@@ -65,3 +65,12 @@ body { background: #0B0F0B; color: #F2F5F2; }
 .rb-pixel:hover .rb-pixel-popup, .rb-pixel:focus .rb-pixel-popup { display: block; }
 
 .rb-journey-arrow { text-align: center; color: #2563EB; font-size: 18px; line-height: 1; margin: -2px 0; }
+
+.rb-metric-icon { font-size: 22px; display: block; margin-bottom: 6px; }
+.rb-edu { margin-top: 16px; background: #151A15; border: 1px solid #242A24; border-radius: 12px; padding: 14px 16px; }
+.rb-edu strong { display: block; }
+.rb-edu span { font-size: 13px; color: #A8B3A8; }
+.rb-edu .rb-tags { margin-top: 10px; }
+.rb-bullets { margin: 10px 0 0; padding-left: 18px; font-size: 13px; color: #C8D2C8; }
+.rb-bullets li { margin-bottom: 4px; }
+.rb-timeline-card .rb-tags { margin-top: 12px; }

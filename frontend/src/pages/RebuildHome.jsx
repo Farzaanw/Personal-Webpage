@@ -26,6 +26,7 @@ function MetricsRow({ metrics }) {
       <div className="rb-metrics" ref={ref} onScroll={update}>
         {metrics.map((m) => (
           <div className="rb-metric" key={m.label}>
+            <span className="rb-metric-icon">{m.icon}</span>
             <strong>{m.value}</strong>
             <span>{m.label}</span>
           </div>
@@ -37,7 +38,6 @@ function MetricsRow({ metrics }) {
 }
 
 function RebuildHome() {
-  const sideProject = siteContent.journeyTimeline.find((j) => j.title === 'Teachly + MaptivityAI');
   const journeyRecentFirst = [...siteContent.journeyTimeline].filter((j) => j.title !== 'Teachly + MaptivityAI').reverse();
   return (
     <div className="rb-wrap">
@@ -63,6 +63,12 @@ function RebuildHome() {
             <a href="https://github.com/Farzaanw" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://www.linkedin.com/in/fw-35a844245" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="mailto:farzaanw@gmail.com">Email</a>
+            <a href="/Farzaan_Wadiwalla_Resume.pdf" download>Resume</a>
+          </div>
+          <div className="rb-edu">
+            <strong>{siteContent.education.degree} — {siteContent.education.school}</strong>
+            <span>{siteContent.education.date} · {siteContent.education.gpa}</span>
+            <div className="rb-tags">{siteContent.education.coursework.map((c) => (<span className="rb-tag" key={c}>{c}</span>))}</div>
           </div>
           <MetricsRow metrics={siteContent.metrics} />
         </section>
@@ -83,7 +89,7 @@ function RebuildHome() {
 
         <section id="journey" className="rb-section">
           <h2 className="rb-h2">Professional Journey</h2>
-          <p className="rb-lede">Most recent first — read down through the story. Same 13 milestones as the Professional Experience Timeline.</p>
+          <p className="rb-lede">Most recent first — read down through the story. Side projects live in Featured Work.</p>
           <div className="rb-timeline">
             {journeyRecentFirst.map((j, i) => (
               <React.Fragment key={j.title}>
@@ -92,6 +98,8 @@ function RebuildHome() {
                   <h3>{j.title}</h3>
                   <div className="rb-timeline-org">{j.org}</div>
                   <p>{j.summary}</p>
+                  {j.bullets && (<ul className="rb-bullets">{j.bullets.map((b) => (<li key={b}>{b}</li>))}</ul>)}
+                  {j.skills && (<div className="rb-tags">{j.skills.map((s) => (<span className="rb-tag" key={s}>{s}</span>))}</div>)}
                 </article>
                 {i < journeyRecentFirst.length - 1 && <div className="rb-journey-arrow" aria-hidden="true">↑</div>}
               </React.Fragment>
