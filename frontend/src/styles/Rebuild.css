@@ -37,3 +37,11 @@ body { background: #0B0F0B; color: #F2F5F2; }
   .rb-metrics { grid-template-columns: 1fr 1fr; }
   .rb-grid { grid-template-columns: 1fr; }
 }
+.rb-reel { display: flex; gap: 10px; overflow-x: auto; margin-top: 20px; padding: 4px 2px 12px; scroll-snap-type: x mandatory; }
+.rb-reel-item { flex: 0 0 auto; scroll-snap-align: start; background: #151A15; border: 1px solid #242A24; border-radius: 999px; padding: 8px 14px; font-size: 13px; color: #C8D2C8; white-space: nowrap; }
+.rb-timeline { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 12px; }
+.rb-timeline-card { flex: 0 0 260px; background: #151A15; border: 1px solid #242A24; border-top: 3px solid #2563EB; border-radius: 12px; padding: 16px; }
+.rb-timeline-date { font-size: 12px; letter-spacing: .08em; color: #2563EB; font-weight: 700; }
+.rb-timeline-card h3 { margin: 6px 0 4px; font-size: 16px; }
+.rb-timeline-org { font-size: 13px; color: #C8D2C8; }
+.rb-timeline-card p { font-size: 13px; color: #A8B3A8; }

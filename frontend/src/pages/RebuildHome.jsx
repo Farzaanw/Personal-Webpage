@@ -28,6 +28,9 @@ function RebuildHome() {
             <a href="https://www.linkedin.com/in/fw-35a844245" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="mailto:farzaanw@gmail.com">Email</a>
           </div>
+          <div className="rb-reel" aria-label="Highlights reel">
+            {siteContent.highlights.map((h) => (<span className="rb-reel-item" key={h}>{h}</span>))}
+          </div>
           <div className="rb-metrics">
             {siteContent.metrics.map((m) => (
               <div className="rb-metric" key={m.label}>
@@ -53,9 +56,18 @@ function RebuildHome() {
         </section>
 
         <section id="journey" className="rb-section">
-          <h2 className="rb-h2">Journey</h2>
-          <p className="rb-lede">Condensed from the full career timeline.</p>
-          <div className="rb-journey">{siteContent.journey.join('  →  ')}</div>
+          <h2 className="rb-h2">Professional Journey</h2>
+          <p className="rb-lede">Ported from the Professional Experience Timeline — scroll left to right, same 13 milestones.</p>
+          <div className="rb-timeline">
+            {siteContent.journeyTimeline.map((j) => (
+              <article className="rb-timeline-card" key={j.title}>
+                <div className="rb-timeline-date">{j.date}</div>
+                <h3>{j.title}</h3>
+                <div className="rb-timeline-org">{j.org}</div>
+                <p>{j.summary}</p>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section id="skills" className="rb-section">
