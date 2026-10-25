@@ -1,37 +1,11 @@
-// Defines main structure of the page
-// imported into main.jsx
-// Each page compnent is added here
-import React, { useState } from 'react'           // use for chatIcon button (open/close chatBot)
-import Navbar from './components/Navbar'
-import Homepage from './pages/Homepage'
-import About from './pages/About'
-import Education from './pages/Education'
-import Experiences from './pages/Experiences'
-import Projects from './pages/Projects'
-import Contact from './pages/Contact'
-// import ChatIcon from './components/ChatIcon'
-// import Chatbot from './components/Chatbot'
-import Hobbies from './pages/Hobbies'
-import Footer from './components/Footer'
-
+// Rebuild entry point (feat/site-enhancements).
+// Old pages are retained in the repo but not rendered by this branch;
+// they can be deleted in a follow-up cleanup once the rebuild is approved.
+import React from 'react';
+import RebuildHome from './pages/RebuildHome';
 
 function App() {
-    return (
-        <>
-            <Navbar />
-            <Homepage />
-            <About />
-            <Education />
-            <Experiences />
-            <Projects />
-            <Hobbies />
-            <Contact />
-            {/* <ChatIcon /> */}
-            <Footer />
-    
-        </>
-    );
+  return <RebuildHome />;
 }
 
 export default App;
-
