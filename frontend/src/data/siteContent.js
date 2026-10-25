@@ -47,28 +47,15 @@ export const siteContent = {
   ],
   skills: {
     languages: ["Python", "Go", "C++", "Java", "JavaScript", "TypeScript", "SQL", "Bash"],
-    cloud: ["AWS", "Kubernetes (EKS)", "Terraform", "Docker", "CircleCI / ArgoCD", "OpenTelemetry"],
-    ai: ["Anthropic SDK (Go)", "MCP", "RAG", "FAISS", "Claude Code"],
+    cloud: ["AWS", "Kubernetes (EKS)", "Terraform", "Docker", "CircleCI / ArgoCD", "OpenTelemetry", "Bedrock", "Lambda", "SQS", "S3", "API Gateway", "EventBridge", "Datadog", "Valkey"],
+    ai: ["Anthropic SDK (Go)", "MCP", "RAG", "FAISS", "Claude Code", "Bedrock AgentCore", "NVIDIA Nemotron", "YOLO", "NLTK"],
+    webEdge: ["React", "Vite", "Flask", "ESP32", "Raspberry Pi Pico"],
   },
 
   beyondCodeExperiences: [
-    { title: "Marathon", detail: "First marathon, completed in Eugene in 2025. Training for another." },
-    { title: "HYROX Portland", detail: "Race May 21–23, 2027. Building compromised running and station skills." },
-    { title: "Long Beach Half", detail: "2XU Long Beach Half Marathon, Oct 2027. Registered Oct 2026." },
+    { title: "Eugene Marathon (2026)", detail: "Completed the Eugene marathon." },
     { title: "Mt. Hood Summit", detail: "Climbed Mt. Hood's summit crest." },
-    { title: "South Sisters", detail: "Next summit goal, planned Feb–Apr 2027." },
-    { title: "Snowboarding", detail: "Learning to snowboard this winter, with Camille." },
-    { title: "Tennis & Pickleball", detail: "Played 1–2 years, getting back to regular court time." },
-    { title: "Golf", detail: "Regular golfer, plus a golf roadtrip with cousins planned Jan 2027." },
-    { title: "Archery", detail: "Learning and improving, Oct 2026–Mar 2027." },
-    { title: "Cooking", detail: "Learning to cook full meals and meal prep." },
-    { title: "Reading", detail: "Getting into reading." },
-    { title: "Travel", detail: "Visited WA, OR, CA, NY, Chicago, FL, AZ, NV, DC, OH, HI, AK, plus India, Italy, France, Mexico, Bahamas, Canada. Bucket list: Japan, Greece, Turkey, Brazil, Peru, Egypt, Madeira, Africa." },
-    { title: "Australia", detail: "Trip planned for winter break 2026–27." },
-    { title: "Hosting", detail: "Goal: host an event, Oct 2026–Jun 2027." },
-    { title: "PM & Public Speaking", detail: "Joining PM and public speaking clubs, Jan 2027." },
-    { title: "Music", detail: "Piano enthusiast, aiming to master 2–4 songs by end of Dec 2026. Anything with a good beat." },
+    { title: "HYROX Portland (In Progress)", detail: "Training for HYROX Portland, May 21–23, 2027." },
   ],
-  beyondCode: "Eugene marathon '25 · HYROX Portland May '27 · Long Beach Half Oct '27",
 };
 export default siteContent;
