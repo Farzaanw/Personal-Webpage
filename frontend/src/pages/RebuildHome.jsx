@@ -1,23 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { siteContent } from '../data/siteContent.js';
 import '../styles/Rebuild.css';
 
 
-function HighlightsCarousel({ highlights }) {
-  const [index, setIndex] = useState(0);
-  useEffect(() => {
-    const timer = setTimeout(() => setIndex((index + 1) % highlights.length), 5000);
-    return () => clearTimeout(timer);
-  }, [index, highlights.length]);
-  const next = () => setIndex((index + 1) % highlights.length);
+function MetricsRow({ metrics }) {
+  const ref = useRef(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+  const update = () => {
+    const el = ref.current;
+    if (!el) return;
+    setAtStart(el.scrollLeft <= 10);
+    setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 10);
+  };
+  useEffect(() => { update(); }, []);
+  const scroll = (dir) => {
+    const el = ref.current;
+    if (!el) return;
+    if (dir > 0 && atEnd) { el.scrollTo({ left: 0, behavior: 'smooth' }); return; }
+    el.scrollBy({ left: dir * 240, behavior: 'smooth' });
+  };
   return (
-    <div className="rb-carousel" aria-label="Highlights carousel">
-      <button className="rb-carousel-tab" onClick={next} title="Click for the next highlight">{highlights[index]}</button>
-      <div className="rb-dots">
-        {highlights.map((h, i) => (
-          <button key={h} className={i === index ? "rb-dot active" : "rb-dot"} onClick={() => setIndex(i)} aria-label={`Highlight ${i + 1}`} />
+    <div className="rb-metrics-wrap">
+      {!atStart && <button className="rb-metrics-arrow" onClick={() => scroll(-1)} aria-label="Previous highlights">←</button>}
+      <div className="rb-metrics" ref={ref} onScroll={update}>
+        {metrics.map((m) => (
+          <div className="rb-metric" key={m.label}>
+            <strong>{m.value}</strong>
+            <span>{m.label}</span>
+          </div>
         ))}
       </div>
+      <button className="rb-metrics-arrow" onClick={() => scroll(1)} aria-label="Next highlights">→</button>
     </div>
   );
 }
@@ -50,15 +64,7 @@ function RebuildHome() {
             <a href="https://www.linkedin.com/in/fw-35a844245" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="mailto:farzaanw@gmail.com">Email</a>
           </div>
-          <HighlightsCarousel highlights={siteContent.highlights} />
-          <div className="rb-metrics">
-            {siteContent.metrics.map((m) => (
-              <div className="rb-metric" key={m.label}>
-                <strong>{m.value}</strong>
-                <span>{m.label}</span>
-              </div>
-            ))}
-          </div>
+          <MetricsRow metrics={siteContent.metrics} />
         </section>
 
         <section id="work" className="rb-section">
@@ -87,10 +93,10 @@ function RebuildHome() {
                   <div className="rb-timeline-org">{j.org}</div>
                   <p>{j.summary}</p>
                 </article>
-                {i < journeyRecentFirst.length - 1 && <div className="rb-journey-arrow" aria-hidden="true">↓</div>}
+                {i < journeyRecentFirst.length - 1 && <div className="rb-journey-arrow" aria-hidden="true">↑</div>}
               </React.Fragment>
             ))}
-            <div className="rb-journey-arrow" aria-hidden="true">↓</div>
+            <div className="rb-journey-arrow" aria-hidden="true">↑</div>
           </div>
         </section>
 
