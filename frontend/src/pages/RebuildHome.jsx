@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { siteContent } from '../data/siteContent.js';
 import '../styles/Rebuild.css';
 
+
+function HighlightsReel({ highlights }) {
+  const [index, setIndex] = useState(0);
+  const prev = () => setIndex((index + highlights.length - 1) % highlights.length);
+  const next = () => setIndex((index + 1) % highlights.length);
+  return (
+    <div className="rb-reel" aria-label="Highlights reel">
+      <button className="rb-arrow" onClick={prev} aria-label="Previous highlight">←</button>
+      <div className="rb-stack">
+        {highlights.map((h, i) => (
+          <span key={h} className={i === index ? "rb-stack-tab active" : "rb-stack-tab"} style={{ left: i * 16, zIndex: i === index ? 10 : i }}>{h}</span>
+        ))}
+      </div>
+      <button className="rb-arrow" onClick={next} aria-label="Next highlight">→</button>
+      <span className="rb-reel-count">{index + 1} / {highlights.length}</span>
+    </div>
+  );
+}
+
 function RebuildHome() {
+  const sideProject = siteContent.journeyTimeline.find((j) => j.title === 'Teachly + MaptivityAI');
+  const journeyRecentFirst = [...siteContent.journeyTimeline].filter((j) => j.title !== 'Teachly + MaptivityAI').reverse();
   return (
     <div className="rb-wrap">
       <nav className="rb-nav">
@@ -28,9 +49,7 @@ function RebuildHome() {
             <a href="https://www.linkedin.com/in/fw-35a844245" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="mailto:farzaanw@gmail.com">Email</a>
           </div>
-          <div className="rb-reel" aria-label="Highlights reel">
-            {siteContent.highlights.map((h) => (<span className="rb-reel-item" key={h}>{h}</span>))}
-          </div>
+          <HighlightsReel highlights={siteContent.highlights} />
           <div className="rb-metrics">
             {siteContent.metrics.map((m) => (
               <div className="rb-metric" key={m.label}>
@@ -57,9 +76,9 @@ function RebuildHome() {
 
         <section id="journey" className="rb-section">
           <h2 className="rb-h2">Professional Journey</h2>
-          <p className="rb-lede">Ported from the Professional Experience Timeline — scroll left to right, same 13 milestones.</p>
+          <p className="rb-lede">Most recent first — read down through the story. Same 13 milestones as the Professional Experience Timeline.</p>
           <div className="rb-timeline">
-            {siteContent.journeyTimeline.map((j) => (
+            {journeyRecentFirst.map((j) => (
               <article className="rb-timeline-card" key={j.title}>
                 <div className="rb-timeline-date">{j.date}</div>
                 <h3>{j.title}</h3>
@@ -80,6 +99,15 @@ function RebuildHome() {
         <section id="contact" className="rb-section rb-footer">
           <h2 className="rb-h2">Beyond code</h2>
           <p>{siteContent.beyondCode}</p>
+          <div className="rb-matrix">
+            {siteContent.beyondCodeExperiences.map((e) => (
+              <div className="rb-pixel" key={e.title} tabIndex={0}>
+                <span>{e.title}</span>
+                <div className="rb-pixel-popup"><strong>{e.title}</strong><p>{e.detail}</p></div>
+              </div>
+            ))}
+          </div>
+          <p className="rb-matrix-note">Hover a pixel to see the story. Add a new experience to beyondCodeExperiences in siteContent.js and the matrix grows by one.</p>
           <p>Farzaan Wadiwalla · farzaanw@gmail.com · <a href="https://github.com/Farzaanw" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/fw-35a844245" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
           <p>Rebuilt on feat/site-enhancements. Main site stays live until this branch is reviewed and merged.</p>
         </section>
