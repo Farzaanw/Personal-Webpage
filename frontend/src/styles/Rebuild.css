@@ -86,3 +86,7 @@ body { background: #0B0F0B; color: #F2F5F2; }
 .rb-journey-stack p { font-size: 13px; color: #A8B3A8; }
 .rb-journey-toggle { display: block; margin-top: 10px; color: #2563EB; font-weight: 700; font-size: 13px; }
 .rb-journey-toggle-btn { background: #151A15; border: 1px solid #333; color: #F2F5F2; border-radius: 999px; padding: 8px 14px; cursor: pointer; margin-bottom: 12px; font-size: 13px; }
+
+.rb-cta { margin-bottom: 8px; }
+.rb-edu { margin-top: 24px; margin-bottom: 8px; }
+.rb-metrics-wrap { margin-top: 32px; }
