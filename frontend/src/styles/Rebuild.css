@@ -1,14 +1,14 @@
 /* Rebuild design system: two-tone (black / white) sections, one accent.
    ACCENT OPTIONS — to switch, change --rb-accent and --rb-accent-ink only:
-     Volt Green   (default): --rb-accent: #00E65C;  --rb-accent-ink: #00793A;
-     Solar Orange:           --rb-accent: #FF5C1C;  --rb-accent-ink: #D63D00;
+     Solar Orange (default): --rb-accent: #FF5C1C;  --rb-accent-ink: #D63D00;
+     Volt Green:             --rb-accent: #00E65C;  --rb-accent-ink: #00793A;
      Electric Cyan:          --rb-accent: #00C2FF;  --rb-accent-ink: #0077A8;
      Ultra Violet:           --rb-accent: #8B5CF6;  --rb-accent-ink: #6D28D9;
    --rb-accent is the bright version used on black; --rb-accent-ink is the
    darker, readable version of the same hue used as text on white. */
 :root {
-  --rb-accent: #00E65C;
-  --rb-accent-ink: #00793A;
+  --rb-accent: #FF5C1C;
+  --rb-accent-ink: #D63D00;
   --rb-black: #0B0F0B;
   --rb-white: #F4F6F4;
 }
@@ -19,7 +19,7 @@ body { background: #0B0F0B; color: #F2F5F2; }
 .rb-logo { font-weight: 800; letter-spacing: .08em; }
 .rb-logo span { color: var(--rb-accent); }
 .rb-links { display: flex; gap: 18px; font-size: 14px; color: #A8B3A8; flex-wrap: wrap; }
-.rb-pill { background: var(--rb-accent); color: #06130A; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+.rb-pill { background: var(--rb-accent); color: #1A0B00; padding: 6px 12px; border-radius: 999px; font-size: 13px; font-weight: 700; }
 
 /* Full-bleed two-tone sections: the hard black/white edge is the divider. */
 .rb-section { padding: 56px 24px; }
@@ -38,7 +38,7 @@ body { background: #0B0F0B; color: #F2F5F2; }
 .rb-sub { color: #A8B3A8; }
 .rb-cta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; margin-bottom: 8px; }
 .rb-cta a { padding: 10px 16px; border-radius: 999px; border: 1px solid #333; color: #F2F5F2; text-decoration: none; font-size: 14px; }
-.rb-cta a.primary { background: var(--rb-accent); color: #06130A; border-color: var(--rb-accent); font-weight: 700; }
+.rb-cta a.primary { background: var(--rb-accent); color: #1A0B00; border-color: var(--rb-accent); font-weight: 700; }
 .rb-metrics-wrap { display: flex; align-items: center; gap: 10px; margin-top: 32px; }
 .rb-metrics { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; flex: 1; }
 .rb-metrics::-webkit-scrollbar { display: none; }
@@ -79,10 +79,10 @@ body { background: #0B0F0B; color: #F2F5F2; }
 .rb-matrix { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 8px; margin-top: 16px; }
 .rb-pixel { position: relative; aspect-ratio: 1; background: #2A2F2A; border: 1px solid #242A24; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 8px; font-size: 13px; color: #C8D2C8; transition: transform .15s, border-color .15s; }
 .rb-pixel:nth-child(6n+2) { background: #334155; color: #FFFFFF; }
-.rb-pixel:nth-child(6n+3) { background: #14532D; color: #FFFFFF; }
-.rb-pixel:nth-child(6n+4) { background: var(--rb-accent); color: #06130A; }
-.rb-pixel:nth-child(6n+5) { background: #16A34A; color: #FFFFFF; }
-.rb-pixel:nth-child(6n) { background: #86EFAC; color: #14532D; }
+.rb-pixel:nth-child(6n+3) { background: #7C2D12; color: #FFFFFF; }
+.rb-pixel:nth-child(6n+4) { background: var(--rb-accent); color: #1A0B00; }
+.rb-pixel:nth-child(6n+5) { background: #EA580C; color: #FFFFFF; }
+.rb-pixel:nth-child(6n) { background: #FDBA74; color: #7C2D12; }
 .rb-pixel:hover { border-color: var(--rb-accent); transform: translateY(-2px); }
 .rb-pixel-popup { display: none; position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%); width: 230px; background: #1E293B; border: 1px solid var(--rb-accent); border-radius: 10px; padding: 12px; z-index: 20; text-align: left; color: #F2F5F2; }
 .rb-pixel-popup p { font-size: 13px; color: #C8D2C8; margin: 4px 0 0; }
