@@ -1,38 +1,46 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { siteContent } from '../data/siteContent.js';
 import '../styles/Rebuild.css';
 
 
 function MetricsRow({ metrics }) {
-  const ref = useRef(null);
-  const [atStart, setAtStart] = useState(true);
-  const [atEnd, setAtEnd] = useState(false);
-  const update = () => {
-    const el = ref.current;
-    if (!el) return;
-    setAtStart(el.scrollLeft <= 10);
-    setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 10);
-  };
-  useEffect(() => { update(); }, []);
-  const scroll = (dir) => {
-    const el = ref.current;
-    if (!el) return;
-    if (dir > 0 && atEnd) { el.scrollTo({ left: 0, behavior: 'smooth' }); return; }
-    el.scrollBy({ left: dir * 240, behavior: 'smooth' });
-  };
+  // Infinite conveyor: the list is rendered twice and the track animates
+  // from -50% to 0, so it moves left-to-right forever with no visible seam.
+  const half = (ariaHidden) => (
+    <div className="rb-marquee-half" aria-hidden={ariaHidden || undefined}>
+      {metrics.map((m) => (
+        <div className="rb-metric" key={m.label}>
+          <strong>{m.value}</strong>
+          <span>{m.label}</span>
+        </div>
+      ))}
+    </div>
+  );
   return (
-    <div className="rb-metrics-wrap">
-      {!atStart && <button className="rb-metrics-arrow" onClick={() => scroll(-1)} aria-label="Previous highlights">←</button>}
-      <div className="rb-metrics" ref={ref} onScroll={update}>
-        {metrics.map((m) => (
-          <div className="rb-metric" key={m.label}>
-            <span className="rb-metric-icon">{m.icon}</span>
-            <strong>{m.value}</strong>
-            <span>{m.label}</span>
-          </div>
-        ))}
+    <div className="rb-marquee" aria-label="Highlights">
+      <div className="rb-marquee-track">
+        {half(false)}
+        {half(true)}
       </div>
-      <button className="rb-metrics-arrow" onClick={() => scroll(1)} aria-label="Next highlights">→</button>
+    </div>
+  );
+}
+
+function LoopBand({ title, items, reverse, duration }) {
+  const half = (ariaHidden) => (
+    <div className="rb-loop-half" aria-hidden={ariaHidden || undefined}>
+      {items.map((s) => (<span className="rb-loop-chip" key={s}>{s}</span>))}
+    </div>
+  );
+  return (
+    <div className="rb-loopband rb-reveal">
+      <h3>{title}</h3>
+      <div className="rb-loop-viewport">
+        <div className={`rb-loop-track${reverse ? ' reverse' : ''}`} style={{ animationDuration: duration }}>
+          {half(false)}
+          {half(true)}
+        </div>
+      </div>
     </div>
   );
 }
@@ -81,7 +89,6 @@ function RebuildHome() {
             <div className="rb-eyebrow">OREGON STATE · HONORS CS '27 · PORTLAND, OR</div>
             <h1>{siteContent.name}</h1>
             <p>{siteContent.role}</p>
-            <p className="rb-sub">{siteContent.status}</p>
             <div className="rb-cta">
               <a className="primary" href="#work">View work</a>
               <a href="https://github.com/Farzaanw" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -152,11 +159,18 @@ function RebuildHome() {
           <div className="rb-inner">
             <div className="rb-reveal">
               <h2 className="rb-h2">Stack</h2>
+              <p className="rb-lede">Always in the loop — plan, build, ship, observe, repeat.</p>
+              <div className="rb-loop-wrap" aria-hidden="true">
+                <svg className="rb-loop-svg" viewBox="0 0 200 100" role="presentation">
+                  <path className="rb-loop-path" d="M100 50 C100 22 62 12 37 26 C12 40 12 60 37 74 C62 88 100 78 100 50 C100 22 138 12 163 26 C188 40 188 60 163 74 C138 88 100 78 100 50" />
+                </svg>
+                <div className="rb-loop-stages">PLAN · BUILD · SHIP · OBSERVE · IMPROVE</div>
+              </div>
             </div>
-            <div className="rb-skillgroup rb-reveal"><h3>Languages</h3><div className="rb-tags">{siteContent.skills.languages.map((s) => (<span className="rb-tag" key={s}>{s}</span>))}</div></div>
-            <div className="rb-skillgroup rb-reveal"><h3>Cloud &amp; Platform</h3><div className="rb-tags">{siteContent.skills.cloud.map((s) => (<span className="rb-tag" key={s}>{s}</span>))}</div></div>
-            <div className="rb-skillgroup rb-reveal"><h3>AI</h3><div className="rb-tags">{siteContent.skills.ai.map((s) => (<span className="rb-tag" key={s}>{s}</span>))}</div></div>
-            <div className="rb-skillgroup rb-reveal"><h3>Web &amp; Edge</h3><div className="rb-tags">{siteContent.skills.webEdge.map((s) => (<span className="rb-tag" key={s}>{s}</span>))}</div></div>
+            <LoopBand title="Languages" items={siteContent.skills.languages} duration="34s" />
+            <LoopBand title="Cloud & Platform" items={siteContent.skills.cloud} reverse duration="52s" />
+            <LoopBand title="AI" items={siteContent.skills.ai} duration="42s" />
+            <LoopBand title="Web & Edge" items={siteContent.skills.webEdge} reverse duration="30s" />
           </div>
         </section>
 
