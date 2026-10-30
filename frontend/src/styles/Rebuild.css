@@ -90,12 +90,7 @@ body { background: #0B0F0B; color: #F2F5F2; }
 .rb-pixel:hover .rb-pixel-popup, .rb-pixel:focus .rb-pixel-popup { display: block; }
 
 
-/* Stack: animated DevOps infinity loop + constantly moving loop bands. */
-.rb-loop-wrap { text-align: center; margin: 4px 0 22px; }
-.rb-loop-svg { width: min(340px, 82%); height: auto; }
-.rb-loop-path { fill: none; stroke: var(--rb-accent); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 7 11; animation: rb-dashflow 5s linear infinite; }
-@keyframes rb-dashflow { to { stroke-dashoffset: -180; } }
-.rb-loop-stages { font-size: 11px; letter-spacing: .18em; color: var(--rb-accent-ink); font-weight: 700; margin-top: 2px; }
+/* Stack: constantly moving conveyor bands of skill chips. */
 .rb-loopband { margin-bottom: 16px; }
 .rb-loopband h3 { font-size: 14px; margin: 0 0 8px; color: #22301F; }
 .rb-loop-viewport { overflow: hidden; background: #E9EDE9; border: 1px solid #D8DED8; border-radius: 12px; padding: 10px 0; -webkit-mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent); mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent); }
@@ -110,7 +105,7 @@ body { background: #0B0F0B; color: #F2F5F2; }
 .rb-reveal.rb-inview { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
   .rb-reveal { opacity: 1; transform: none; transition: none; }
-  .rb-marquee-track, .rb-loop-track, .rb-loop-path { animation: none; }
+  .rb-marquee-track, .rb-loop-track { animation: none; }
 }
 
 @media (max-width: 700px) {

@@ -159,13 +159,6 @@ function RebuildHome() {
           <div className="rb-inner">
             <div className="rb-reveal">
               <h2 className="rb-h2">Stack</h2>
-              <p className="rb-lede">Always in the loop — plan, build, ship, observe, repeat.</p>
-              <div className="rb-loop-wrap" aria-hidden="true">
-                <svg className="rb-loop-svg" viewBox="0 0 200 100" role="presentation">
-                  <path className="rb-loop-path" d="M100 50 C100 22 62 12 37 26 C12 40 12 60 37 74 C62 88 100 78 100 50 C100 22 138 12 163 26 C188 40 188 60 163 74 C138 88 100 78 100 50" />
-                </svg>
-                <div className="rb-loop-stages">PLAN · BUILD · SHIP · OBSERVE · IMPROVE</div>
-              </div>
             </div>
             <LoopBand title="Languages" items={siteContent.skills.languages} duration="34s" />
             <LoopBand title="Cloud & Platform" items={siteContent.skills.cloud} reverse duration="52s" />
