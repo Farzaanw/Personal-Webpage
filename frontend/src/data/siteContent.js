@@ -3,14 +3,7 @@
 export const siteContent = {
   name: "Farzaan Wadiwalla",
   role: "Software Engineer — AI Systems & Cloud Platforms",
-  status: "DevEx AI Engineer at Cambia · OSU Honors CS '27 · Open to 2027 new-grad roles",
-  education: {
-    degree: "B.S. Honors Computer Science",
-    school: "Oregon State University",
-    date: "Expected June 2027",
-    gpa: "GPA 3.9",
-    coursework: ["Agentic Systems", "ML & Data Mining", "Networks & Distributed Systems", "Parallel Programming", "Data Structures & Algorithms", "Databases", "Operating Systems", "Computer Architecture"],
-  },
+  status: "DevEx AI Engineer at Cambia · OSU Honors CS '27",
   metrics: [
     { value: "300+", icon: "🚀", label: "engineers on Code Coach" },
     { value: "25–50", icon: "🔍", label: "PRs reviewed / week" },
