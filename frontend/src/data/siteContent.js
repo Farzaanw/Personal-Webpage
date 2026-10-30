@@ -53,6 +53,10 @@ export const siteContent = {
     { title: "Eugene Marathon (2026)", detail: "Completed the Eugene marathon." },
     { title: "Mt. Hood Summit", detail: "Climbed Mt. Hood's summit crest." },
     { title: "HYROX Portland (In Progress)", detail: "Training for HYROX Portland, May 21–23, 2027." },
+    { title: "Golf", detail: "Sunday golf days — and a golf roadtrip with cousins is on the list for 2027." },
+    { title: "Learning to Snowboard", detail: "Learning to snowboard this winter, with Camille." },
+    { title: "Guitar", detail: "Evening practice — learning 2–3 new songs a month." },
+    { title: "Cooking", detail: "Loves to cook — exploring new recipes and learning to make full meals, plus weekly meal prep." },
   ],
 };
 export default siteContent;
