@@ -11,9 +11,12 @@ export const siteContent = {
     { value: "3rd", label: "HackUp, of 70+ teams — LectureLife" },
     { value: "7-person", label: "team led — BeaverBench" },
     { value: "10k+", label: "code samples in APR research" },
+    { value: "2", label: "AI products shipped end-to-end" },
     { value: "Open-source", label: "OTel telemetry framework for AI tooling" },
     { value: "POC → Prod", label: "Code Coach shipped to production" },
     { value: "Org-wide", label: "engineering demo presentations" },
+    { value: "26.2", label: "miles — Eugene Marathon" },
+    { value: "11,249 ft", label: "Mt. Hood summit" },
   ],
   featured: [
     { title: "Code Coach", summary: "Multi-agent PR review on EKS + Bedrock. Go agent runtime with MCP tools, saving ~5–10 reviewer hours a week.", stack: ["Go", "AWS EKS", "Bedrock", "MCP", "Terraform", "OTel"] },
